@@ -36,14 +36,10 @@
             numericUpDown1 = new NumericUpDown();
             numericUpDown2 = new NumericUpDown();
             label4 = new Label();
-            colorDialog1 = new ColorDialog();
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            label5 = new Label();
             button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // cmbx_Errorlvl
@@ -111,31 +107,24 @@
             label4.TabIndex = 7;
             label4.Text = "x";
             // 
-            // panel1
+            // label5
             // 
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(421, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(477, 437);
-            panel1.TabIndex = 8;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(22, 15);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(432, 408);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            label5.AutoSize = true;
+            label5.Location = new Point(12, 174);
+            label5.Name = "label5";
+            label5.Size = new Size(132, 15);
+            label5.TabIndex = 8;
+            label5.Text = "Selecciona una imagen:";
             // 
             // button1
             // 
-            button1.Location = new Point(12, 180);
+            button1.Location = new Point(12, 192);
             button1.Name = "button1";
-            button1.Size = new Size(76, 40);
+            button1.Size = new Size(75, 23);
             button1.TabIndex = 9;
-            button1.Text = "Selecciona un color";
+            button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += button1_Click_1;
             // 
             // Form1
             // 
@@ -143,7 +132,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(910, 548);
             Controls.Add(button1);
-            Controls.Add(panel1);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(numericUpDown2);
             Controls.Add(numericUpDown1);
@@ -156,8 +145,6 @@
             Text = "QR Generator";
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -172,9 +159,7 @@
         private NumericUpDown numericUpDown1;
         private NumericUpDown numericUpDown2;
         private Label label4;
-        private ColorDialog colorDialog1;
-        private Panel panel1;
-        private PictureBox pictureBox1;
+        private Label label5;
         private Button button1;
     }
 }

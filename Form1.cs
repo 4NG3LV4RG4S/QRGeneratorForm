@@ -4,6 +4,7 @@ namespace QRGeneratorForms
 {
     public partial class Form1 : Form
     {
+        private string selectedImagePath;
         public Form1()
         {
             InitializeComponent();
@@ -11,19 +12,19 @@ namespace QRGeneratorForms
             cmbx_Errorlvl.DataSource = Enum.GetValues(typeof(ErrorLevelCorrectionEnum));
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            ColorDialog MyDialog = new ColorDialog();
-            // Keeps the user from selecting a custom color.
-            MyDialog.AllowFullOpen = false;
-            // Allows the user to get help. (The default is false.)
-            MyDialog.ShowHelp = true;
-            // Sets the initial color select to the current text color.
-            MyDialog.Color = textBox1.ForeColor;
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                openFileDialog.Title = "Select an Image";
 
-            // Update the text box color if the user clicks OK 
-            if (MyDialog.ShowDialog() == DialogResult.OK)
-                textBox1.ForeColor = MyDialog.Color;
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    selectedImagePath = openFileDialog.FileName;
+                    MessageBox.Show("Imagen seleccionada: " + selectedImagePath, "Imagen Cargada");
+                }
+            }
         }
     }
 }
